@@ -1,0 +1,142 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Jewel & Luxury) mixed with 4 (Swiss & High-Contrast)",
+  "brand_identity": {
+    "name": "MHS-ScaleOps",
+    "founder": "Muhammad Hassan Shafiq",
+    "tone": "Bold, high-trust, conversion-focused, sharp operator-first",
+    "positioning": "I build expert-led online training businesses at zero upfront cost. I only get paid when you make money."
+  },
+  "typography": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Outfit:wght@300;400;700;900&display=swap",
+    "headings": {
+      "family": "'Outfit', sans-serif",
+      "weights": ["300", "700", "900"],
+      "usage": "Use Outfit Black (900) for hero/major impact, Light (300) for elegant contrast subheadings. Apply tracking-tight or tracking-tighter to all headings > 32px."
+    },
+    "body": {
+      "family": "'Manrope', sans-serif",
+      "weights": ["300", "400", "500", "600"],
+      "usage": "Use Manrope Regular/Medium for dense body text, FAQs, and labels. Apply leading-relaxed."
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl tracking-tighter",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl tracking-tight",
+      "h3": "text-2xl sm:text-3xl tracking-tight",
+      "body": "text-base sm:text-lg text-slate-300",
+      "labels": "text-xs sm:text-sm uppercase tracking-[0.2em] text-slate-400"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#050505",
+      "secondary": "#0f1115",
+      "glass": "rgba(15, 17, 21, 0.7)"
+    },
+    "text": {
+      "primary": "#ffffff",
+      "secondary": "#94a3b8",
+      "muted": "#64748b"
+    },
+    "accents": {
+      "teal_primary": "#14b8a6",
+      "teal_glow": "rgba(20, 184, 166, 0.15)",
+      "amber_cta": "#f59e0b",
+      "amber_hover": "#d97706"
+    },
+    "border": {
+      "default": "#1e293b",
+      "focus": "#14b8a6"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous spacing. p-12 to p-32 for section padding. Asymmetric alignments. Avoid centered layouts unless for specific contrast.",
+    "container": "max-w-7xl mx-auto px-6 sm:px-12",
+    "grid_system": "Bento Grid strategy for featured content. Use gap-6 or gap-8."
+  },
+  "components": {
+    "navbar": {
+      "style": "Crystal Glassmorphism",
+      "classes": "fixed top-0 w-full z-50 backdrop-blur-xl bg-[#050505]/70 border-b border-slate-800",
+      "logo": "/assets/mhs-logo.png"
+    },
+    "hero": {
+      "layout": "Asymmetric, min-h-[90vh] flex items-center pt-24",
+      "visuals": "Dark architectural offset image layered with heavy text.",
+      "ctas": {
+        "primary": "Solid Amber bg-[#f59e0b] text-black hover:bg-[#d97706] rounded-sm px-8 py-4 font-semibold text-lg transition-transform hover:-translate-y-1",
+        "secondary": "Outline Teal border border-[#14b8a6] text-[#14b8a6] hover:bg-[#14b8a6]/10 rounded-sm px-8 py-4 font-semibold text-lg transition-colors"
+      }
+    },
+    "cards": {
+      "style": "Grid Borders / Technical Look",
+      "classes": "bg-[#0f1115] border border-slate-800 p-8 rounded-none transition-all duration-300 hover:border-[#14b8a6]/50 hover:shadow-[0_0_20px_rgba(20,184,166,0.1)]",
+      "usage": "Use for the 12 Deliverables in 'The Offer' section."
+    },
+    "timeline_stepper": {
+      "style": "Vertical elegant tracking line",
+      "line_color": "bg-slate-800",
+      "node_color": "bg-[#14b8a6] ring-4 ring-[#050505]",
+      "usage": "Use for 'How It Works' (3-phase commission model) and 'Process' (30-day roadmap)."
+    },
+    "niche_chips": {
+      "style": "Tactile Pill Badges",
+      "classes": "px-6 py-3 rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 text-sm tracking-wide font-medium"
+    },
+    "accordion": {
+      "usage": "Shadcn UI Accordion for FAQs. Style with border-b border-slate-800, no cards."
+    }
+  },
+  "media_and_assets": {
+    "images": [
+      {
+        "category": "hero_abstract",
+        "url": "https://images.pexels.com/photos/18272053/pexels-photo-18272053.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Intricate geometric design in modern architecture with light and shadow play. Use as hero right-side offset image or atmospheric background."
+      },
+      {
+        "category": "texture_overlay",
+        "url": "https://images.unsplash.com/photo-1761437855598-011cf89b2ad4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBibGFjayUyMHRleHR1cmUlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3ODMzNzgyNnww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract golden metallic curves on black background. Use as subtle 5-10% opacity overlay in specific sections like Founder or Offer."
+      },
+      {
+        "category": "founder_placeholder",
+        "url": "https://images.pexels.com/photos/10657877/pexels-photo-10657877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Professional corporate portrait of a bearded man in suit and eyeglasses. Use as placeholder for Muhammad Hassan Shafiq."
+      },
+      {
+        "category": "naixol_case_study",
+        "url": "https://images.unsplash.com/photo-1607799632518-da91dd151b38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwxfHxkYXRhJTIwZGFzaGJvYXJkJTIwZGFyayUyMG1vZGV8ZW58MHx8fHwxNzc4MzM3ODMyfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Black flat screen computer monitor in dark setting. Represents data/analytics success for Naixol."
+      },
+      {
+        "category": "logo",
+        "url": "/assets/mhs-logo.png",
+        "description": "MHS-ScaleOps logo, already downloaded."
+      }
+    ]
+  },
+  "links_and_integrations": {
+    "calendly": "https://calendly.com/shafiqhassan429/mhs",
+    "jotform": "https://www.jotform.com/build/261208419658059",
+    "naixol_instagram": "https://www.instagram.com/naixol_int/",
+    "contact_email": "shafiqhassan429@gmail.com"
+  },
+  "motion_and_interaction": {
+    "hover_states": "All cards and buttons must have clear hover transitions. Buttons: translate-y, bg-color shift. Cards: subtle border color shift to teal.",
+    "scroll_reveal": "Implement Framer Motion staggered reveals on scroll (opacity 0 to 1, y: 20 to 0).",
+    "marquee": "Consider a slow-moving marquee for the niches or deliverable keywords if a purely static layout feels too rigid, using text-slate-800/50 outline text."
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure all text meets WCAG AA standard against #050505 background.",
+    "test_ids": "Mandatory data-testid attributes on all buttons, links, accordion triggers, and form elements (e.g., data-testid='hero-calendly-btn', data-testid='faq-trigger-1')."
+  },
+  "instructions_to_main_agent": [
+    "Install 'lucide-react' for icons. Use Phosphor Icons (@phosphor-icons/react) if higher-end duotone icons are needed.",
+    "Do not use generic 'Inter' or 'Space Grotesk' fonts. Import 'Outfit' and 'Manrope' from Google Fonts and configure them in tailwind.config.js.",
+    "Use standard HTML/Tailwind for structural layout (grids, hero, footers). Use Shadcn UI ONLY for complex interactive elements like Accordions.",
+    "Embed Calendly in the Final CTA section via iframe or react-calendly.",
+    "For the Jotform link, render it as a button (href) as per requirements (not an iframe).",
+    "Do not invent new colors. Stick strictly to the slate-950/050505 dark theme, Amber (#f59e0b) for primary actions, and Teal (#14b8a6) for accents."
+  ]
+}
