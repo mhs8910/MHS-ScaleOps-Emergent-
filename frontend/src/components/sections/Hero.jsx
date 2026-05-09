@@ -47,9 +47,7 @@ export default function Hero() {
               <ArrowUpRight size={18} className="group-hover:rotate-45 transition-transform" />
             </a>
             <a
-              href={LINKS.jotform}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#apply"
               data-testid="hero-jotform-cta"
               className="inline-flex items-center justify-center gap-2 px-7 py-4 border border-teal-500/60 text-teal-300 hover:bg-teal-500/10 hover:border-teal-400 hover:text-white font-semibold text-base tracking-wide transition-all rounded-sm"
             >

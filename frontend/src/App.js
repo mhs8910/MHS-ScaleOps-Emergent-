@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/sections/Navbar';
 import Hero from './components/sections/Hero';
 import TrustStrip from './components/sections/TrustStrip';
+import VideoIntro from './components/sections/VideoIntro';
 import Offer from './components/sections/Offer';
 import HowItWorks from './components/sections/HowItWorks';
 import Niches from './components/sections/Niches';
@@ -11,6 +12,7 @@ import CaseStudy from './components/sections/CaseStudy';
 import Roadmap from './components/sections/Roadmap';
 import Founder from './components/sections/Founder';
 import FAQ from './components/sections/FAQ';
+import LeadForm from './components/sections/LeadForm';
 import FinalCTA from './components/sections/FinalCTA';
 import Footer from './components/sections/Footer';
 
@@ -25,6 +27,7 @@ function Landing() {
       <main>
         <Hero />
         <TrustStrip />
+        <VideoIntro />
         <Offer />
         <HowItWorks />
         <Niches />
@@ -32,6 +35,7 @@ function Landing() {
         <Roadmap />
         <Founder />
         <FAQ />
+        <LeadForm />
         <FinalCTA />
       </main>
       <Footer />

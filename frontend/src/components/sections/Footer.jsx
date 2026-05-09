@@ -77,7 +77,7 @@ export default function Footer() {
                 <a href={LINKS.calendly} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors break-all">{LINKS.calendly.replace('https://', '')}</a>
               </li>
               <li>
-                <a href={LINKS.jotform} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-white transition-colors">Apply Form →</a>
+                <a href="#apply" className="text-sm text-slate-400 hover:text-white transition-colors">Apply Form →</a>
               </li>
             </ul>
           </div>

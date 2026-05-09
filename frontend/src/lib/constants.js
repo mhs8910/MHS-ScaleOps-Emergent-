@@ -11,6 +11,7 @@ export const NAV_ITEMS = [
   { label: 'Niches', href: '#niches' },
   { label: 'Proof', href: '#proof' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Apply', href: '#apply' },
 ];
 
 export const DELIVERABLES = [
