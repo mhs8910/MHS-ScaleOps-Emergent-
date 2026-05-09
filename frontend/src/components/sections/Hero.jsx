@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { LINKS, STATS } from '../../lib/constants';
+import { useMagnetic } from '../../hooks/useMagnetic';
 
 export default function Hero() {
+  const calRef = useMagnetic({ strength: 0.32 });
+  const applyRef = useMagnetic({ strength: 0.28 });
   return (
     <section id="top" data-testid="hero-section" className="relative min-h-[100vh] flex items-center pt-28 pb-20 overflow-hidden">
       {/* Background ambient glow */}
@@ -37,19 +40,22 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 mb-14">
             <a
+              ref={calRef}
               href={LINKS.calendly}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="hero-calendly-cta"
-              className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-amber-500 text-black font-bold text-base tracking-wide hover:bg-amber-400 hover:-translate-y-1 transition-all rounded-sm glow-amber"
+              data-cursor="amber"
+              className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-amber-500 text-black font-bold text-base tracking-wide hover:bg-amber-400 transition-colors rounded-sm glow-amber will-change-transform"
             >
               Book Free Strategy Call
               <ArrowUpRight size={18} className="group-hover:rotate-45 transition-transform" />
             </a>
             <a
+              ref={applyRef}
               href="#apply"
               data-testid="hero-jotform-cta"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 border border-teal-500/60 text-teal-300 hover:bg-teal-500/10 hover:border-teal-400 hover:text-white font-semibold text-base tracking-wide transition-all rounded-sm"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 border border-teal-500/60 text-teal-300 hover:bg-teal-500/10 hover:border-teal-400 hover:text-white font-semibold text-base tracking-wide transition-colors rounded-sm will-change-transform"
             >
               Apply to Build With Me
             </a>

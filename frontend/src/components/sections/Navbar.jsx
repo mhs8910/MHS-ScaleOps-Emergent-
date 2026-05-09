@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { LINKS, NAV_ITEMS } from '../../lib/constants';
+import { useMagnetic } from '../../hooks/useMagnetic';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navCalRef = useMagnetic({ strength: 0.28 });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -45,11 +47,13 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
+            ref={navCalRef}
             href={LINKS.calendly}
             target="_blank"
             rel="noopener noreferrer"
             data-testid="navbar-calendly-cta"
-            className="inline-flex items-center px-5 py-2.5 bg-amber-500 text-black font-semibold text-sm tracking-wide hover:bg-amber-400 hover:-translate-y-0.5 transition-all rounded-sm"
+            data-cursor="amber"
+            className="inline-flex items-center px-5 py-2.5 bg-amber-500 text-black font-semibold text-sm tracking-wide hover:bg-amber-400 transition-colors rounded-sm will-change-transform"
           >
             Book Free Call
           </a>

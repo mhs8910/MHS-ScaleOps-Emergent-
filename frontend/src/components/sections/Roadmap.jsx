@@ -1,5 +1,37 @@
 import { motion } from 'framer-motion';
 import { ROADMAP } from '../../lib/constants';
+import { useTilt } from '../../hooks/useTilt';
+
+function RoadmapCard({ r, i }) {
+  const tiltRef = useTilt({ max: 6, damping: 0.14 });
+  return (
+    <motion.div
+      ref={tiltRef}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.5, delay: i * 0.08 }}
+      data-testid={`roadmap-week-${i + 1}`}
+      className="bg-[#0a0b0e] p-7 group hover:bg-[#0f1115] transition-colors"
+    >
+      <div className="flex items-center gap-3 mb-5">
+        <span className="font-display font-black text-5xl text-slate-800 group-hover:text-teal-500 tracking-tighter transition-colors">0{i + 1}</span>
+        <div className="flex flex-col leading-tight">
+          <span className="text-[10px] uppercase tracking-[0.22em] text-teal-400 font-semibold">{r.week}</span>
+          <span className="font-display font-bold text-white text-2xl tracking-tight">{r.title}</span>
+        </div>
+      </div>
+      <ul className="space-y-2.5">
+        {r.items.map((it) => (
+          <li key={it} className="flex gap-2 items-start text-sm text-slate-400">
+            <span className="mt-2 w-1 h-1 bg-amber-500 shrink-0" />
+            {it}
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+}
 
 export default function Roadmap() {
   return (
@@ -15,33 +47,9 @@ export default function Roadmap() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-800/70 border border-slate-800">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-800/70 border border-slate-800 [perspective:1200px]">
           {ROADMAP.map((r, i) => (
-            <motion.div
-              key={r.week}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              data-testid={`roadmap-week-${i + 1}`}
-              className="bg-[#0a0b0e] p-7 group hover:bg-[#0f1115] transition-colors"
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <span className="font-display font-black text-5xl text-slate-800 group-hover:text-teal-500 tracking-tighter transition-colors">0{i + 1}</span>
-                <div className="flex flex-col leading-tight">
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-teal-400 font-semibold">{r.week}</span>
-                  <span className="font-display font-bold text-white text-2xl tracking-tight">{r.title}</span>
-                </div>
-              </div>
-              <ul className="space-y-2.5">
-                {r.items.map((it) => (
-                  <li key={it} className="flex gap-2 items-start text-sm text-slate-400">
-                    <span className="mt-2 w-1 h-1 bg-amber-500 shrink-0" />
-                    {it}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            <RoadmapCard key={r.week} r={r} i={i} />
           ))}
         </div>
       </div>

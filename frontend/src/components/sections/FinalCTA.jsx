@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { LINKS } from '../../lib/constants';
+import { useMagnetic } from '../../hooks/useMagnetic';
 
 export default function FinalCTA() {
   const ref = useRef(null);
   const [loaded, setLoaded] = useState(false);
+  const calRef = useMagnetic({ strength: 0.3 });
+  const applyRef = useMagnetic({ strength: 0.26 });
 
   useEffect(() => {
     if (loaded) return;
@@ -43,19 +46,22 @@ export default function FinalCTA() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
+              ref={calRef}
               href={LINKS.calendly}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="final-calendly-cta"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-amber-500 text-black font-bold text-base tracking-wide hover:bg-amber-400 hover:-translate-y-1 transition-all rounded-sm glow-amber"
+              data-cursor="amber"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-amber-500 text-black font-bold text-base tracking-wide hover:bg-amber-400 transition-colors rounded-sm glow-amber will-change-transform"
             >
               Book Free Strategy Call
               <ArrowUpRight size={18} />
             </a>
             <a
+              ref={applyRef}
               href="#apply"
               data-testid="final-jotform-cta"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 border border-teal-500/60 text-teal-300 hover:bg-teal-500/10 hover:text-white font-semibold text-base tracking-wide transition-all rounded-sm"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 border border-teal-500/60 text-teal-300 hover:bg-teal-500/10 hover:text-white font-semibold text-base tracking-wide transition-colors rounded-sm will-change-transform"
             >
               Apply via Form
             </a>

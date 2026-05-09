@@ -1,6 +1,6 @@
 .App {
-    background: #050505;
     color: #ffffff;
     min-height: 100vh;
     font-family: 'Manrope', sans-serif;
+    background: transparent;
 }

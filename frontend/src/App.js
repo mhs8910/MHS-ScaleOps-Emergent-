@@ -15,6 +15,8 @@ import FAQ from './components/sections/FAQ';
 import LeadForm from './components/sections/LeadForm';
 import FinalCTA from './components/sections/FinalCTA';
 import Footer from './components/sections/Footer';
+import CustomCursor from './components/effects/CustomCursor';
+import LiquidBackground from './components/effects/LiquidBackground';
 
 function Landing() {
   useEffect(() => {
@@ -22,7 +24,9 @@ function Landing() {
   }, []);
 
   return (
-    <div className="App min-h-screen bg-[#050505] text-white" data-testid="landing-page">
+    <div className="App min-h-screen text-white relative" data-testid="landing-page">
+      <LiquidBackground />
+      <CustomCursor />
       <Navbar />
       <main>
         <Hero />

@@ -1,5 +1,28 @@
 import { motion } from 'framer-motion';
 import { DELIVERABLES } from '../../lib/constants';
+import { useTilt } from '../../hooks/useTilt';
+
+function DeliverableCard({ d, i }) {
+  const tiltRef = useTilt({ max: 5, damping: 0.14 });
+  return (
+    <motion.div
+      ref={tiltRef}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.5, delay: (i % 6) * 0.06 }}
+      data-testid={`deliverable-${d.num}`}
+      className="group bg-[#0a0b0e] p-7 sm:p-8 hover:bg-[#0f1115] transition-colors duration-300 cursor-default"
+    >
+      <div className="flex items-start justify-between mb-5">
+        <span className="font-display font-light text-3xl text-slate-700 group-hover:text-teal-500 tracking-tight transition-colors">{d.num}</span>
+        <span className="w-8 h-px bg-slate-800 group-hover:bg-teal-500 transition-colors mt-4" />
+      </div>
+      <h3 className="font-display font-bold text-white text-xl tracking-tight mb-2">{d.title}</h3>
+      <p className="font-body text-sm text-slate-400 leading-relaxed">{d.desc}</p>
+    </motion.div>
+  );
+}
 
 export default function Offer() {
   return (
@@ -23,24 +46,9 @@ export default function Offer() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-800/70 border border-slate-800">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-800/70 border border-slate-800 [perspective:1200px]">
           {DELIVERABLES.map((d, i) => (
-            <motion.div
-              key={d.num}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, delay: (i % 6) * 0.06 }}
-              data-testid={`deliverable-${d.num}`}
-              className="group bg-[#0a0b0e] p-7 sm:p-8 hover:bg-[#0f1115] transition-colors duration-300 cursor-default"
-            >
-              <div className="flex items-start justify-between mb-5">
-                <span className="font-display font-light text-3xl text-slate-700 group-hover:text-teal-500 tracking-tight transition-colors">{d.num}</span>
-                <span className="w-8 h-px bg-slate-800 group-hover:bg-teal-500 transition-colors mt-4" />
-              </div>
-              <h3 className="font-display font-bold text-white text-xl tracking-tight mb-2">{d.title}</h3>
-              <p className="font-body text-sm text-slate-400 leading-relaxed">{d.desc}</p>
-            </motion.div>
+            <DeliverableCard key={d.num} d={d} i={i} />
           ))}
         </div>
       </div>
