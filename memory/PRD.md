@@ -51,10 +51,18 @@ Create a premium modern landing page for MHS-ScaleOps from scratch. The brand is
   - Resend integration wired but **gracefully skips** until real `RESEND_API_KEY` is set
 - New "Apply" nav link added (desktop + mobile)
 
+**[Dec 2025 — v3 motion + atmosphere layer]**
+- Custom glowing cursor — teal ring + dot, lerp-follow, expands 2.4× on interactive hover, shifts amber over amber CTAs, contracts on mousedown
+- Liquid animated background — 3 large blurred blobs (teal × 2 + amber) orbiting on long CSS keyframes (28–40s)
+- Premium grid texture overlay — fine 56px grid, 7% opacity, radial-mask vignette
+- Magnetic CTAs — Hero, Final CTA, and Navbar primary buttons subtly attract toward cursor (RAF-driven, transform-only)
+- 3D tilt cards — Offer (12 deliverables) + Roadmap (4 weeks) cards rotate ±5–6° on perspective-900 hover with smooth lerp
+- All effects: GPU-accelerated, RAF-throttled, **double-gated** on `(hover: none)` AND `prefers-reduced-motion` (CSS + JS)
+
 ## Test Status
 - **iteration_1**: 100% pass — initial v1 build
-- **iteration_2**: 100% pass — v2 enhancements (10/10 backend pytest, full frontend e2e on lead form submission)
-- Zero console errors, zero a11y blockers, zero leaks
+- **iteration_2**: 100% pass — v2 enhancements (lead form, video intro, OG meta)
+- **iteration_3**: 100% pass — v3 motion layer (zero regressions, zero a11y issues)
 
 ## Integrations & Placeholders
 | Item | Status | Action to go live |
