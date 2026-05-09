@@ -42,17 +42,31 @@ Create a premium modern landing page for MHS-ScaleOps from scratch. The brand is
 - Final CTA — embedded Calendly iframe (lazy-loaded), dual buttons
 - Footer — logo, contact, social icons, navigation, copyright
 
-**Integrations:**
-- Calendly link: https://calendly.com/shafiqhassan429/mhs (live iframe + button targets)
-- Jotform link: https://www.jotform.com/build/261208419658059 (button targets)
-- Naixol IG: https://www.instagram.com/naixol_int/ (case study link)
-- Email: shafiqhassan429@gmail.com (mailto in footer)
-- Logo: /app/frontend/public/assets/mhs-logo.png
+**[Dec 2025 — v2 enhancements]**
+- SEO/Social: full meta tags (description, keywords, og:title/description/image, twitter:card), branded `<title>`, favicon → /assets/mhs-logo.png, custom OG image at /assets/og-image.svg (1200×630, branded)
+- Founder Video Intro section with play button + "coming soon" placeholder UI (set `LOOM_PLACEHOLDER` in `VideoIntro.jsx` once Hassan records)
+- Native on-page Lead Form (`#apply` section) — replaces external Jotform link in all CTAs
+  - Backend: `POST /api/leads` + `GET /api/leads` (sorted desc, no `_id` leak)
+  - Frontend: validated form (name, email, expertise, revenue tier, message) → success state with Calendly fallback
+  - Resend integration wired but **gracefully skips** until real `RESEND_API_KEY` is set
+- New "Apply" nav link added (desktop + mobile)
 
 ## Test Status
-- testing_agent_v3 iteration_1: **100% pass** (backend + frontend)
-- All 18 review-request items verified
-- Zero console errors, zero a11y blockers
+- **iteration_1**: 100% pass — initial v1 build
+- **iteration_2**: 100% pass — v2 enhancements (10/10 backend pytest, full frontend e2e on lead form submission)
+- Zero console errors, zero a11y blockers, zero leaks
+
+## Integrations & Placeholders
+| Item | Status | Action to go live |
+|---|---|---|
+| Calendly | ✅ Live | None — real link wired |
+| Naixol IG | ✅ Live | None |
+| Logo | ✅ Live | Replace if rebrand |
+| Founder photo | ⚠ Pexels placeholder | Replace `Founder.jsx` image src with real headshot |
+| Naixol metrics | ⚠ Directional copy | Replace `CaseStudy.jsx` 3 metric values |
+| Loom intro video | ⚠ Placeholder | Set `LOOM_PLACEHOLDER` in `VideoIntro.jsx` |
+| Resend email | ⚠ Placeholder key | Set real `RESEND_API_KEY` in `/app/backend/.env` + restart backend |
+| OG image | ✅ Branded SVG ready | Optional: replace with photo-based 1200×630 PNG for richer link previews |
 
 ## Prioritized Backlog
 **P1 — Polish**
