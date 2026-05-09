@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { LINKS, STATS } from '../../lib/constants';
 import { useMagnetic } from '../../hooks/useMagnetic';
+import HeroPortrait3D from '../effects/HeroPortrait3D';
 
 export default function Hero() {
   const calRef = useMagnetic({ strength: 0.32 });
@@ -80,27 +81,17 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
           className="lg:col-span-5 relative"
         >
-          <div className="relative aspect-[4/5] max-w-[460px] mx-auto">
-            {/* Frame */}
-            <div className="absolute inset-0 border border-teal-500/30 translate-x-3 translate-y-3 rounded-sm" />
-            <div className="absolute inset-0 overflow-hidden border border-slate-700 rounded-sm">
-              <img
-                src="https://images.pexels.com/photos/18272053/pexels-photo-18272053.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=720"
-                alt="Architecture"
-                className="w-full h-full object-cover grayscale contrast-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#050505] via-transparent to-teal-500/10 mix-blend-multiply" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#050505]" />
-            </div>
+          <div className="relative">
+            <HeroPortrait3D />
 
-            {/* Floating chip */}
-            <div className="absolute -left-6 top-10 bg-[#0f1115]/95 backdrop-blur-md border border-slate-800 px-5 py-4 rounded-sm shadow-2xl max-w-[230px]">
+            {/* Floating chips — repositioned to flank the portrait without covering the face */}
+            <div className="absolute -left-4 sm:-left-8 top-6 bg-[#0f1115]/95 backdrop-blur-md border border-slate-800 px-5 py-4 rounded-sm shadow-2xl max-w-[220px] z-10">
               <div className="text-[10px] uppercase tracking-[0.2em] text-teal-400 font-semibold mb-1">Operator-led</div>
               <div className="text-white font-display font-bold text-base leading-snug">Built. Launched. Scaled.</div>
               <div className="text-xs text-slate-400 mt-1">In 30 days, not 30 weeks.</div>
             </div>
 
-            <div className="absolute -right-4 bottom-12 bg-[#0f1115]/95 backdrop-blur-md border border-amber-500/30 px-5 py-4 rounded-sm shadow-2xl">
+            <div className="absolute -right-2 sm:-right-4 bottom-10 bg-[#0f1115]/95 backdrop-blur-md border border-amber-500/30 px-5 py-4 rounded-sm shadow-2xl z-10">
               <div className="text-[10px] uppercase tracking-[0.2em] text-amber-400 font-semibold mb-1">Commission</div>
               <div className="font-display font-black text-3xl text-white tracking-tight">25–30%</div>
               <div className="text-xs text-slate-400 mt-0.5">Until proof of revenue</div>

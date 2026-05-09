@@ -25,11 +25,13 @@ export default function Founder() {
             <div className="absolute inset-0 border border-amber-500/30 translate-x-3 translate-y-3" />
             <div className="absolute inset-0 overflow-hidden border border-slate-700">
               <img
-                src="https://images.pexels.com/photos/10657877/pexels-photo-10657877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=720"
+                src="/assets/hassan-cutout.png"
                 alt="Muhammad Hassan Shafiq"
-                className="w-full h-full object-cover grayscale contrast-110"
+                className="w-full h-full object-contain object-bottom"
+                style={{ background: 'linear-gradient(180deg, #0a0b0e 0%, #0f1115 100%)' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/30 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(20,184,166,0.12),transparent_55%)] pointer-events-none" />
             </div>
             <div className="absolute bottom-5 left-5 right-5">
               <div className="font-display font-black text-white text-2xl tracking-tight">Muhammad Hassan Shafiq</div>
